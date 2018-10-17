@@ -5,7 +5,7 @@ module.exports = {
 	// entry: './core/events@0.0.1.js',
 	
 	output: {
-		filename: 'base.[chunkhash].js',
+		filename: 'base.js',
 		publicPath: '/',
 		path: path.resolve(__dirname, '../assets')
 	},

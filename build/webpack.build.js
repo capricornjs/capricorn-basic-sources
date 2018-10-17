@@ -37,7 +37,7 @@ config.plugins = (config.plugins || []).concat([
 	new UglifyJSPlugin(),
 	//想看包文件的情况，可以打开
 	//new BundleAnalyzerPlugin(),
-	new ExtractTextPlugin('base.[chunkhash].css'),
+	new ExtractTextPlugin('base.css'),
 ])
 
 fs.remove(path.resolve(__dirname, '../assets'))
