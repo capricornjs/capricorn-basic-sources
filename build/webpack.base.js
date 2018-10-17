@@ -1,11 +1,11 @@
 const path = require('path')
 
 module.exports = {
-	entry: './js/main@0.0.1.js',
+	entry: './index.js',
 	// entry: './core/events@0.0.1.js',
 	
 	output: {
-		filename: '[name].js',
+		filename: 'base.[chunkhash].js',
 		publicPath: '/',
 		path: path.resolve(__dirname, '../assets')
 	},

@@ -1,6 +1,7 @@
 const config = require('./webpack.base')
 const webpack = require('webpack')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
 const fs = require('fs-extra')
 const { log, renderAscii } = require('./core/util')
@@ -9,14 +10,16 @@ const Spinner = require('./core/spinner')
 
 config.mode = 'production'
 
-Object.assign(config.output, {
-	filename: '[name].js',
-	chunkFilename: '[id].js',
-	publicPath: '/',
-	path: path.resolve(__dirname, '../assets')
-})
-
 config.module.rules = config.module.rules.concat([
+	{
+		test: /\.less$/,
+		use: ExtractTextPlugin.extract({
+			use: [
+				'css-loader',
+				'postcss-loader',
+				'less-loader']
+		})
+	},
 	{
 		test: /\.(js|jsx)$/,
 		use: ['babel-loader'],
@@ -31,10 +34,10 @@ config.plugins = (config.plugins || []).concat([
 			NODE_ENV: '"production"'
 		}
 	}),
-	new UglifyJSPlugin()
+	new UglifyJSPlugin(),
 	//想看包文件的情况，可以打开
 	//new BundleAnalyzerPlugin(),
-	// new ExtractTextPlugin('[name].[chunkhash].css'),
+	new ExtractTextPlugin('base.[chunkhash].css'),
 ])
 
 fs.remove(path.resolve(__dirname, '../assets'))
