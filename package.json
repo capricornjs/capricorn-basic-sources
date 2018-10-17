@@ -1,0 +1,32 @@
+{
+    "name": "capricorn-basic-sources",
+    "version": "0.0.1",
+    "description": "摩羯系统 - 公共资源集合",
+    "private": true,
+    "scripts": {
+        "build": "export NODE_ENV=prodution && node ./build/webpack.build.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/monajs/capricorn-basic-sources.git"
+    },
+    "author": "yangxi",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/monajs/capricorn-basic-sources/issues"
+    },
+    "homepage": "https://github.com/monajs/capricorn-basic-sources#readme",
+    "devDependencies": {
+        "@babel/core": "^7.1.2",
+        "@babel/plugin-proposal-class-properties": "^7.1.0",
+        "@babel/preset-env": "^7.1.0",
+        "babel-loader": "^8.0.4",
+        "babel-plugin-transform-object-assign": "^6.22.0",
+        "chalk": "^2.4.1",
+        "console.table": "^0.10.0",
+        "fs-extra": "^7.0.0",
+        "uglifyjs-webpack-plugin": "^2.0.1",
+        "webpack": "^4.20.2",
+        "webpack-bundle-analyzer": "^3.0.3"
+    }
+}
