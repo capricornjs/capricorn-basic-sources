@@ -15,6 +15,9 @@ class Toast {
 			})
 		}
 		this.toastList.push(options)
+		if (this.timer) {
+			return
+		}
 		this._item()
 	}
 	
@@ -28,9 +31,6 @@ class Toast {
 		if (this.toastList.length === 0) {
 			return
 		}
-		if (this.timer) {
-			return
-		}
 		this.node.classList.remove('hide')
 		const { message, duration = 2000 } = this.toastList[0]
 		this.node.innerText = message
@@ -40,6 +40,7 @@ class Toast {
 			this.toastList.shift()
 			if (this.toastList.length === 0) {
 				this.node.classList.add('hide')
+				
 			} else {
 				this._item()
 			}
