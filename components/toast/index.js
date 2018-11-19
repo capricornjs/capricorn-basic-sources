@@ -40,7 +40,7 @@ class Toast {
 			this.toastList.shift()
 			if (this.toastList.length === 0) {
 				this.node.classList.add('hide')
-				
+				this.timer = null
 			} else {
 				this._item()
 			}
