@@ -1,5 +1,5 @@
 import Events from 'mona-events'
-import toast from 'components/toast'
+import toast from './components/toast'
 import './style/index.less'
 
 window.Capricorn = {}
