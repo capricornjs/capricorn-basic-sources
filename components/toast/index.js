@@ -28,6 +28,9 @@ class Toast {
 		if (this.toastList.length === 0) {
 			return
 		}
+		if (this.timer) {
+			return
+		}
 		this.node.classList.remove('hide')
 		const { message, duration = 2000 } = this.toastList[0]
 		this.node.innerText = message
