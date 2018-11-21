@@ -38,6 +38,8 @@
         "webpack-bundle-analyzer": "^3.0.3"
     },
     "dependencies": {
-        "mona-events": "^0.1.0"
+        "axios": "^0.18.0",
+        "mona-events": "^0.1.0",
+        "qs": "^6.5.2"
     }
 }
